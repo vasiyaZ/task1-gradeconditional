@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Task 1</title>
+</head>
+
+<body>
+
+  <script>
+
+    function gradeMessages() {
+
+      const grades = prompt("Enter the grades separated by commas (e.g., A,B,C):").split(",");
+
+
+      const messages = grades.map((grade) => {
+        const lowerGrade = grade.trim().toLowerCase();
+
+        if (lowerGrade === "a" || lowerGrade === "b" || lowerGrade === "c") {
+          return `${grade.trim()} is a pass`;
+        } else if (!grades.length || grades.some(grade => grade.trim() === "")) {
+          alert("Please enter valid grade!");
+          return;
+        } else {
+          return `${grade.trim()} is a fail`;
+        }
+      });
+
+
+      messages.forEach((message) => alert(message));
+    }
+
+    // Example usage
+    gradeMessages();
+
+  </script>
+</body>
+
+</html>
